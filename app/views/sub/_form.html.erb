@@ -1,0 +1,23 @@
+
+<% if action == :edit %>
+<% action_url = "/sub/#{sub.id}"%>
+<% else %>
+<% action_url = "/users/#{user.id}/sub" %>
+<% end %>
+
+<form action="<%=action_url%>" method="post">
+<% if action == :edit %>
+<input type="hidden" name="_method" value="patch">
+<% end %>
+<%=auth_token%>
+<label>Title</label>
+<br>
+<input type="text" name="user[title]" value="<%=@sub.title%>">
+<br>
+<label>Description</label>
+<br>
+<input type="text" name="user[description]" value="<%=@sub.description%>">
+<br>
+<br>
+<input type="submit" name="" value="Submit Sub">
+</form>

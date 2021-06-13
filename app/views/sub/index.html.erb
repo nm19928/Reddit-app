@@ -1,0 +1,9 @@
+<h1>All Subs</h1>
+
+<a href="/users/<%=current_user.id%>/sub/new">Create new Sub</a>
+
+<ul>
+  <% @subs.each do |sub| %>
+  <a href="/sub/<%=sub.id%>"><li><%=sub.title%></li></a>
+  <% end %>
+</ul>

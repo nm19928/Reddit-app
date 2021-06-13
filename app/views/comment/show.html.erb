@@ -1,0 +1,18 @@
+<h1>Top Level Comment</h1>
+
+<p><%=@comment.content%></p>
+
+<h3>Reply to Comment</h3>
+<form  action="/comment" method="post">
+<%=auth_token%>
+<input type="hidden" name="comment[post_id]" value="<%=@comment.post_id%>">
+<input type="hidden" name="comment[parent_comment_id]" value="<%=@comment.id%>">
+<label>Comment</label>
+<br>
+<br>
+<textarea name="comment[content]" rows="8" cols="55"></textarea>
+<br>
+<br>
+<input type="submit" value="Post Comment">
+</form>
+</form>

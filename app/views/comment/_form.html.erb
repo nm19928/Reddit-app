@@ -1,0 +1,23 @@
+
+
+<% if action == :edit %>
+<% action_url = "/comment/#{comment.id}" %>
+<% else %>
+<% action_url = "/comment" %>
+<% end %>
+
+<form  action="<%=action_url%>" method="post">
+<%=auth_token%>
+<% if action == :edit %>
+<input type="hidden" name="_method" value="patch">
+<% end %>
+<input type="hidden" name="comment[post_id]" value="<%=post.id%>">
+<input type="hidden" name="comment[parent_comment_id]">
+<label>Comment</label>
+<br>
+<br>
+<textarea name="comment[content]" rows="8" cols="55"></textarea>
+<br>
+<br>
+<input type="submit" name="" value="Post Comment">
+</form>

@@ -1,0 +1,13 @@
+<h1><%=@post.title%></h1>
+<h3><%=@post.content%></h3>
+
+<%@comments.each do |comment|%>
+<i><%=comment.username%></i>
+<br>
+<%=comment.content%>
+<ul>
+  <%Comment.where(parent_comment_id:comment.id).each do |pcomment|%>
+    <li><%=pcomment.content%></li>
+  <%end%>
+  </ul>
+<%end%>

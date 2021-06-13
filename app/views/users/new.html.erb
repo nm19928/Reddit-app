@@ -1,0 +1,16 @@
+<h1>Create User</h1>
+<%= flash[:errors].join(", ") if flash[:errors] %>
+
+<form action="/users" method="post">
+<%=auth_token%>
+<label>Username</label>
+<br>
+<input type="text" name="user[username]" value="">
+<br>
+<label>Password</label>
+<br>
+<input type="password" name="user[password]" value="">
+<br>
+<br>
+<input type="submit" name="" value="Create User">
+</form>
